@@ -48,3 +48,5 @@ async def invite(ctx):
     em.title = "Invite"
     em.add_field(name="Invite link", value"https://discordapp.com/oauth2/authorize?client_id=380080034586820618&scope=bot&permissions=1"
         await ctx.send(embed=em)
+
+                 
