@@ -46,7 +46,7 @@ async def help(ctx):
 async def invite(ctx):
     em = discord.Embed(color=discord.Color(value=0xFBCC16))
     em.title = "Invite"
-    em.add_field(name="Invite link", value"https://discordapp.com/oauth2/authorize?client_id=380080034586820618&scope=bot&permissions=1")
+    em.add_field(name="invite link", value=[Click Here!](https://discordapp.com/oauth2/authorize?client_id=380080034586820618&scope=bot&permissions=1)
         await ctx.send(embed=em)
 
                  
