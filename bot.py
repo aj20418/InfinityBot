@@ -25,6 +25,7 @@ async def help(ctx):
     em.title = "Help"
     em.description = "A testing bot"
     em.add_filed(name="Ping", value="Pong! Isn't it nice?!")
+    em.add_filed(name="Invite", value="Invite ApolloBot to your great server!")
         await ctx.send(embed=em)
         
  
@@ -39,3 +40,11 @@ async def help(ctx):
         
         
      
+# Invite command
+
+@bot.command()
+async def invite(ctx):
+    em = discord.Embed(color=discord.Color(value=0xFBCC16))
+    em.title = "Invite"
+    em.add_field(name="Invite link", value"https://discordapp.com/oauth2/authorize?client_id=380080034586820618&scope=bot&permissions=1"
+        await ctx.send(embed=em)
