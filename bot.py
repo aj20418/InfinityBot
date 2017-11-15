@@ -2,7 +2,7 @@ import discord
 import os
 import sys
 import io
-from import.ext import commands
+from discord.ext import commands
 
 # This part defines the bot prefix, the description and the owner ID.
 
