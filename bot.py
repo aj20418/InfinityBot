@@ -49,3 +49,8 @@ async def invite(ctx):
     em.add_field(name="invite link", value="[Click Here!](https://discordapp.com/oauth2/authorize?client_id=380080034586820618&scope=bot&permissions=1)")
     await ctx.send(embed=em)
                  
+
+        
+if not os.environ.get('TOKEN'):
+  print("Could not find token!")
+bot.run(os.environ.get('TOKEN').strip('\"'))
