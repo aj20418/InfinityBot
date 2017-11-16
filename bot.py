@@ -31,7 +31,7 @@ async def help(ctx):
  
  # Ping command
  
- @bot.command()
+@bot.command()
  async def ping(ctx):
      em = discord.Embed(color=discord.Color(value=0xFBCC16))
      em.title = "Pong!"
