@@ -32,12 +32,12 @@ async def help(ctx):
  # Ping command
  
 @bot.command()
- async def ping(ctx):
-     em = discord.Embed(color=discord.Color(value=0xFBCC16))
-     em.title = "Pong!"
-     em.description = await ctx.send("Pong!")
-     await ctx.send(embed=em)
-        
+async def ping(ctx):
+    em = discord.Embed(color=discord.Color(value=0xFBCC16))
+    em.title = "Pong!"
+    em.description = await ctx.send("Pong!")
+    await ctx.send(embed=em)
+       
         
      
 # Invite command
