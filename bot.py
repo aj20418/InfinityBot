@@ -24,8 +24,8 @@ async def help(ctx):
     em = discord.Embed(color=discord.Color(value=0xFBCC16)) 
     em.title = "Help"
     em.description = "A testing bot"
-    em.add_filed(name="Ping", value="Pong! Isn't it nice?!")
-    em.add_filed(name="Invite", value="Invite ApolloBot to your great server!")
+    em.add_field(name="Ping", value="Pong! Isn't it nice?!")
+    em.add_field(name="Invite", value="Invite ApolloBot to your great server!")
     await ctx.send(embed=em)
         
  
