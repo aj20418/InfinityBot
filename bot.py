@@ -71,54 +71,54 @@ async def say(ctx, *, message:str):
                    
                    
                    
-                   
 @bot.command(hidden=True, name='eval')
-@commands.is_owner()
 async def _eval(ctx, *, body: str):
-        """Evaluates a code"""
 
-        env = {
-            'bot': bot,
-            'ctx': ctx,
-            'channel': ctx.channel,
-            'author': ctx.author,
-            'guild': ctx.guild,
-            'message': ctx.message,
-        }
+    if ctx.author.id not in developers:
+        return
 
-        env.update(globals())
+    env = {
+        'bot': bot,
+        'ctx': ctx,
+        'channel': ctx.channel,
+        'author': ctx.author,
+        'guild': ctx.guild,
+        'message': ctx.message,
+    }
 
-        body = cleanup_code(body)
-        stdout = io.StringIO()
+    env.update(globals())
 
-        to_compile = f'async def func():\n{textwrap.indent(body, "  ")}'
+    body = cleanup_code(body)
+    stdout = io.StringIO()
 
+    to_compile = f'async def func():\n{textwrap.indent(body, "  ")}'
+
+    try:
+        exec(to_compile, env)
+    except Exception as e:
+        return await ctx.send(f'```py\n{e.__class__.__name__}: {e}\n```')
+
+    func = env['func']
+    try:
+        with redirect_stdout(stdout):
+            ret = await func()
+    except Exception as e:
+        value = stdout.getvalue()
+        await ctx.send(f'```py\n{value}{traceback.format_exc()}\n```')
+    else:
+        value = stdout.getvalue()
         try:
-            exec(to_compile, env)
-        except Exception as e:
-            return await ctx.send(f'```py\n{e.__class__.__name__}: {e}\n```')
+            await ctx.message.add_reaction('\u2705')
+        except:
+            pass
 
-        func = env['func']
-        try:
-            with redirect_stdout(stdout):
-                ret = await func()
-        except Exception as e:
-            value = stdout.getvalue()
-            await ctx.send(f'```py\n{value}{traceback.format_exc()}\n```')
+        if ret is None:
+            if value:
+                await ctx.send(f'```py\n{value}\n```')
         else:
-            value = stdout.getvalue()
-            try:
-                await ctx.message.add_reaction('\u2705')
-            except:
-                pass
+            await ctx.send(f'```py\n{value}{ret}\n```')
 
-            if ret is None:
-                if value:
-                    await ctx.send(f'```py\n{value}\n```')
-            else:
-                await ctx.send(f'```py\n{value}{ret}\n```')
-
-
+                   
 
                   
                    
