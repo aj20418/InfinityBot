@@ -16,7 +16,19 @@ bot.remove_command('help')
 async def on_ready():
     print("Bot Is Online")
     
-        
+    
+# Help command
+
+
+@bot.command()
+async def help(ctx):
+    em = discord.Embed(color=discord.Color(value=0xFBCC16)) 
+    em.title = "Help"
+    em.description = "A testing bot"
+    em.add_field(name="Ping", value="Pong! Isn't it nice?!")
+    em.add_field(name="Invite", value="Invite ApolloBot to your great server!")
+    await ctx.send(embed=em)
+
  
  # Ping command
  
