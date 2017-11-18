@@ -26,8 +26,8 @@ async def help(ctx):
     em.title = "Bot Commands"
     em.description = "Use -help to display these"
     em.add_field(name="Ping", value="Pong! Isn't it nice?!")
-    em.add_field(name="Invite", value="Invite ApolloBot to your great server!")
     em.add_field(name="Say", value="Say something as the bot!")
+    em.add_field(name="Invite", value="Invite ApolloBot to your great server!")
     await ctx.send(embed=em)
 
  
