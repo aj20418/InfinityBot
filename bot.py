@@ -7,6 +7,15 @@ import traceback
 import textwrap
 from contextlib import redirect_stdout
 
+
+def cleanup_code(content):
+    """Automatically removes code blocks from the code."""
+    # remove ```py\n```
+    if content.startswith('```') and content.endswith('```'):
+        return '\n'.join(content.split('\n')[1:-1])
+
+    return content.strip('` \n')
+
 # This part defines the bot prefix, the description and the owner ID.
 
 bot = commands.Bot(command_prefix="-", description="ApolloBot0.5 is a testing bot. This isn't the final product!", owner_id=362615327441420289)
