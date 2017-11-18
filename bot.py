@@ -23,10 +23,11 @@ async def on_ready():
 @bot.command()
 async def help(ctx):
     em = discord.Embed(color=discord.Color(value=0xFBCC16)) 
-    em.title = "Help"
-    em.description = "A testing bot"
+    em.title = "Bot Commands"
+    em.description = "Use -help to display these"
     em.add_field(name="Ping", value="Pong! Isn't it nice?!")
     em.add_field(name="Invite", value="Invite ApolloBot to your great server!")
+    em.add_field(name="Say", value="Say something as the bot!")
     await ctx.send(embed=em)
 
  
@@ -48,7 +49,14 @@ async def invite(ctx):
     em = discord.Embed(color=discord.Color(value=0xFBCC16))
     em.add_field(name="Invite link", value="[Click Here!](https://discordapp.com/oauth2/authorize?client_id=380080034586820618&scope=bot&permissions=1)")
     await ctx.send(embed=em)
-                 
+    
+    
+@bot.command()
+async def say(ctx, *, message:str):
+    em = discord.Embed(color=discord.Color(value=0xFBCC16))
+    em.description = message
+    await ctx.send(embed=em)
+    
 
         
 if not os.environ.get('TOKEN'):
