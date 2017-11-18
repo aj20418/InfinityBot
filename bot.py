@@ -3,6 +3,9 @@ import os
 import sys
 import io
 from discord.ext import commands
+import traceback
+import textwrap
+from contextlib import redirect_stdout
 
 # This part defines the bot prefix, the description and the owner ID.
 
