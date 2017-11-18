@@ -73,7 +73,7 @@ async def say(ctx, *, message:str):
                    
 @bot.command(hidden=True, name='eval')
 @commands.is_owner()
-async def _eval(ctx, *, body: str):
+async def eval(ctx, *, body: str):
         """Evaluates a code"""
 
         env = {
