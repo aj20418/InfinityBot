@@ -3,18 +3,6 @@ import os
 import sys
 import io
 from discord.ext import commands
-import traceback
-import textwrap
-from contextlib import redirect_stdout
-
-
-def cleanup_code(content):
-    """Automatically removes code blocks from the code."""
-    # remove ```py\n```
-    if content.startswith('```') and content.endswith('```'):
-        return '\n'.join(content.split('\n')[1:-1])
-
-    return content.strip('` \n')
 
 # This part defines the bot prefix, the description and the owner ID.
 
@@ -38,8 +26,8 @@ async def help(ctx):
     em.title = "Bot Commands"
     em.description = "Use -help to display these"
     em.add_field(name="Ping", value="Pong! Isn't it nice?!")
-    em.add_field(name="Say", value="Say something as the bot!")
     em.add_field(name="Invite", value="Invite ApolloBot to your great server!")
+    em.add_field(name="Say", value="Say something as the bot!")
     await ctx.send(embed=em)
 
  
@@ -67,14 +55,10 @@ async def invite(ctx):
 async def say(ctx, *, message:str):
     em = discord.Embed(color=discord.Color(value=0xFBCC16))
     em.description = message
-    await ctx.send(embed=em
-                   
-                   
-                 
-                  
-                   
-        
+    await ctx.send(embed=em)
+    
 
+        
 if not os.environ.get('TOKEN'):
-  print("no token found REEEE!")
+  print("Could not find token!")
 bot.run(os.environ.get('TOKEN').strip('\"'))
