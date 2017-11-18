@@ -74,6 +74,7 @@ async def say(ctx, *, message:str):
                   
                    
         
+
 if not os.environ.get('TOKEN'):
-  print("Could not find token!")
+  print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('\"'))
