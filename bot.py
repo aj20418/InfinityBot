@@ -70,9 +70,8 @@ async def say(ctx, *, message:str):
     await ctx.send(embed=em
                    
                    
-# Eval command
                    
-@bot.command(hidden=True, name='eval')
+@bot.command(hidden = True, name = 'eval') 
 @commands.is_owner()
 async def _eval(ctx, *, body: str):
         """Evaluates a code"""
