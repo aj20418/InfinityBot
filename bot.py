@@ -78,7 +78,7 @@ async def say(ctx, *, message:str):
 async def _eval(ctx, *, body: str):
 
    if ctx.author not in developers:
-    return
+        return
 
     env = {
         'bot': bot,
