@@ -77,10 +77,10 @@ async def say(ctx, *, message:str):
 @bot.command(hidden=True, name='eval')
 async def _eval(ctx, *, body: str):
 
-   if ctx.author not in developers:
+    if ctx.author not in developers:
         return
 
-   env = {
+    env = {
         'bot': bot,
         'ctx': ctx,
         'channel': ctx.channel,
