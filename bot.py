@@ -40,7 +40,7 @@ async def on_ready():
 async def help(ctx):
     em = discord.Embed(color=discord.Color(value=0xFBCC16)) 
     em.title = "Bot Commands"
-    em.description = "Use -help to display these"
+    em.description = "A bot being developed by Apollo, Free TNT and Affinix. Hop into the development server [here](https://discord.gg/vXwFVdy)"
     em.add_field(name="Ping", value="Pong! Isn't it nice?!")
     em.add_field(name="Say", value="Say something as the bot!")
     em.add_field(name="Invite", value="Invite ApolloBot to your great server!")
