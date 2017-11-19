@@ -6,6 +6,7 @@ from discord.ext import commands
 import textwrap
 import traceback
 from contextlib import redirect_stdout
+import json
 
 # This part defines the bot prefix, the description and the owner ID.
 
