@@ -19,6 +19,17 @@ developers = [
     292690616285134850
 ]
 
+
+def dev_check(id):
+    with open('data/devs.json') as f:
+        devs = json.load(f)
+    if id in devs:
+        return True
+    else:
+        return False
+
+
+
 def cleanup_code(content):
     '''Automatically removes code blocks from the code.'''
     # remove ```py\n```
