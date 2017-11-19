@@ -3,6 +3,9 @@ import os
 import sys
 import io
 from discord.ext import commands
+import textwrap
+import traceback
+from contextlib import redirect_stdout
 
 # This part defines the bot prefix, the description and the owner ID.
 
@@ -12,9 +15,9 @@ bot.remove_command('help')
 # This part checks the stuff when bot starts
 
 developers = [
-         362615327441420289,
-         292690616285134850
- ]
+                             362615327441420289,
+                             292690616285134850
+                         ]
 
 def cleanup_code(content):
     '''Automatically removes code blocks from the code.'''
