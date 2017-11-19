@@ -80,7 +80,7 @@ async def _eval(ctx, *, body: str):
    if ctx.author not in developers:
         return
 
-    env = {
+   env = {
         'bot': bot,
         'ctx': ctx,
         'channel': ctx.channel,
