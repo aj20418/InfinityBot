@@ -9,15 +9,15 @@ from contextlib import redirect_stdout
 
 # This part defines the bot prefix, the description and the owner ID.
 
-bot = commands.Bot(command_prefix="-", description="ApolloBot0.5 is a testing bot. This isn't the final product!", owner_id=362615327441420289)
+bot = commands.Bot(command_prefix="-", description="InfinityBot is an amazing discord bot!", owner_id=362615327441420289)
 bot.remove_command('help')
 
 # This part checks the stuff when bot starts
 
 developers = [
-         362615327441420289,
-         292690616285134850
- ]
+    362615327441420289,
+    292690616285134850
+]
 
 def cleanup_code(content):
     '''Automatically removes code blocks from the code.'''
